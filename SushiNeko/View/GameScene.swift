@@ -16,6 +16,7 @@ enum Side {
 
 class GameScene: SKScene {
 //MARK: Properties
+    let punch = SKAction(named: "punch")!
     var sushiTower: [SushiPiece] = []
     var sushiBasePiece: SushiPiece!
     var character: Character!
