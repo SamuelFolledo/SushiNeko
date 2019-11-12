@@ -9,7 +9,6 @@
 import SpriteKit
 
 class Character: SKSpriteNode {
-
     /* Character side */
     var side: Side = .left {
         didSet {

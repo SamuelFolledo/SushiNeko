@@ -15,11 +15,12 @@ enum Side {
 }
 
 class GameScene: SKScene {
-    
+//MARK: Properties
     var sushiTower: [SushiPiece] = []
     var sushiBasePiece: SushiPiece!
     var character: Character!
     
+//MARK: App LifeCycle
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         sushiBasePiece = childNode(withName: kBASESUSHI) as? SushiPiece //connect game object from .sks
@@ -29,6 +30,22 @@ class GameScene: SKScene {
         addRandomPieces(total: 10)
     }
     
+//MARK: Touches
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        /* Called when a touch begins */
+        /* We only need a single touch here */
+        let touch = touches.first!
+        /* Get touch position in scene */
+        let location = touch.location(in: self)
+        /* Was touch on left/right hand side of screen? */
+        if location.x > size.width / 2 {
+            character.side = .right
+        } else {
+            character.side = .left
+        }
+    }
+    
+//MARK: Helper Methods
     func addRandomPieces(total: Int) { /* Add random sushi pieces to the sushi tower */
       for _ in 1...total {
           let lastPiece = sushiTower.last! /* Need to access last piece properties */
