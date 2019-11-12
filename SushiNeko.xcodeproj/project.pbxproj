@@ -31,6 +31,7 @@
 		3310FBC9237A1B1E00B8BBF8 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310FBC8237A1B1E00B8BBF8 /* MSButtonNode.swift */; };
 		3310FBCB237A214700B8BBF8 /* SushiPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310FBCA237A214700B8BBF8 /* SushiPiece.swift */; };
 		3310FBD1237A6DB300B8BBF8 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310FBD0237A6DB300B8BBF8 /* Character.swift */; };
+		3310FBD4237A7E8B00B8BBF8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310FBD3237A7E8B00B8BBF8 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		3310FBC8237A1B1E00B8BBF8 /* MSButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
 		3310FBCA237A214700B8BBF8 /* SushiPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SushiPiece.swift; sourceTree = "<group>"; };
 		3310FBD0237A6DB300B8BBF8 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		3310FBD3237A7E8B00B8BBF8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				3310FBCE237A21E900B8BBF8 /* View */,
 				3310FBCC237A21D300B8BBF8 /* Model */,
 				3310FBCD237A21DA00B8BBF8 /* Controller */,
+				3310FBD2237A7E7300B8BBF8 /* Helper */,
 				3310FBCF237A220200B8BBF8 /* ProjectAssets */,
 				3310FBA1237A17B500B8BBF8 /* Assets.xcassets */,
 				3310FBA3237A17B500B8BBF8 /* LaunchScreen.storyboard */,
@@ -167,6 +170,14 @@
 				3310FBAC237A1ACB00B8BBF8 /* SFX */,
 			);
 			path = ProjectAssets;
+			sourceTree = "<group>";
+		};
+		3310FBD2237A7E7300B8BBF8 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3310FBD3237A7E8B00B8BBF8 /* Constants.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 				3310FB9D237A17B300B8BBF8 /* GameViewController.swift in Sources */,
 				3310FB95237A17B300B8BBF8 /* AppDelegate.swift in Sources */,
 				3310FBD1237A6DB300B8BBF8 /* Character.swift in Sources */,
+				3310FBD4237A7E8B00B8BBF8 /* Constants.swift in Sources */,
 				3310FBCB237A214700B8BBF8 /* SushiPiece.swift in Sources */,
 				3310FBC9237A1B1E00B8BBF8 /* MSButtonNode.swift in Sources */,
 			);
