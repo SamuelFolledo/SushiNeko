@@ -16,10 +16,20 @@ enum Side {
 
 class GameScene: SKScene {
     
-    let kBACKGROUND: String = "background"
+//    let kBACKGROUND: String = "background"
     let kBASESUSHI: String = "sushiBasePiece"
-    let kLEFTCHOPSTICK: String = "leftChopstick"
-    let kRIGHTCHOPSTICK: String = "rightChopstick"
+//    let kLEFTCHOPSTICK: String = "leftChopstick"
+//    let kRIGHTCHOPSTICK: String = "rightChopstick"
+    let kCHARACTER: String = "character"
+    var sushiBasePiece: SushiPiece!
+    var character: Character!
     
+    override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        sushiBasePiece = childNode(withName: kBASESUSHI) as? SushiPiece //connect game object from .sks
+        sushiBasePiece.connectChopsticks()
+        character = childNode(withName: kCHARACTER) as? Character
+        
+    }
     
 }

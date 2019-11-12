@@ -13,6 +13,19 @@ class SushiPiece: SKSpriteNode {
     /* Chopsticks objects */
     var rightChopstick: SKSpriteNode!
     var leftChopstick: SKSpriteNode!
+    var side: Side = .none { /* Sushi type */
+        didSet {
+            switch side {
+            case .left:
+                leftChopstick.isHidden = false
+            case .right:
+                rightChopstick.isHidden = false
+            case .none:
+                leftChopstick.isHidden = true
+                rightChopstick.isHidden = true
+            }
+        }
+    }
 
     /* You are required to implement this for your subclass to work */
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
@@ -23,5 +36,10 @@ class SushiPiece: SKSpriteNode {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
+    
+    func connectChopsticks() {
+        rightChopstick = childNode(withName: "rightChopstick") as? SKSpriteNode
+        leftChopstick = childNode(withName: "leftChopstick") as? SKSpriteNode
+        side = .none
+    }
 }
