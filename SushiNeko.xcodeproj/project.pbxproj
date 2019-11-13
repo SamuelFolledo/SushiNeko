@@ -119,17 +119,17 @@
 		3310FBAF237A1AEE00B8BBF8 /* SushiNekoArtPack */ = {
 			isa = PBXGroup;
 			children = (
-				3310FBB0237A1AEE00B8BBF8 /* character2@2x.png */,
-				3310FBB1237A1AEE00B8BBF8 /* tap_left@2x.png */,
-				3310FBB2237A1AEE00B8BBF8 /* life_bg@2x.png */,
-				3310FBB3237A1AEE00B8BBF8 /* roll@2x.png */,
-				3310FBB4237A1AEE00B8BBF8 /* tap_right@2x.png */,
-				3310FBB5237A1AEE00B8BBF8 /* chopstick@2x.png */,
 				3310FBB6237A1AEE00B8BBF8 /* character1@2x.png */,
-				3310FBB7237A1AEE00B8BBF8 /* life@2x.png */,
+				3310FBB0237A1AEE00B8BBF8 /* character2@2x.png */,
 				3310FBB8237A1AEE00B8BBF8 /* character3@2x.png */,
-				3310FBB9237A1AEE00B8BBF8 /* button@2x.png */,
 				3310FBBA237A1AEE00B8BBF8 /* background@2x.png */,
+				3310FBB3237A1AEE00B8BBF8 /* roll@2x.png */,
+				3310FBB5237A1AEE00B8BBF8 /* chopstick@2x.png */,
+				3310FBB2237A1AEE00B8BBF8 /* life_bg@2x.png */,
+				3310FBB7237A1AEE00B8BBF8 /* life@2x.png */,
+				3310FBB9237A1AEE00B8BBF8 /* button@2x.png */,
+				3310FBB1237A1AEE00B8BBF8 /* tap_left@2x.png */,
+				3310FBB4237A1AEE00B8BBF8 /* tap_right@2x.png */,
 				3310FBBB237A1AEE00B8BBF8 /* mat@2x.png */,
 			);
 			path = SushiNekoArtPack;
