@@ -15,6 +15,8 @@ class GameScene: SKScene {
     var sushiTower: [SushiPiece] = []
     var sushiBasePiece: SushiPiece!
     var character: Character!
+    var state: GameState = .title /* Game management */
+    var playButton: MSButtonNode!
     
 //MARK: App LifeCycle
     override func didMove(to view: SKView) {
@@ -24,6 +26,10 @@ class GameScene: SKScene {
         character = childNode(withName: kCHARACTER) as? Character
         addTowerPiece(side: .none)
         addRandomPieces(total: 10)
+        playButton = childNode(withName: kPLAYBUTTON) as? MSButtonNode
+        playButton.selectedHandler = { /* Setup play button selection handler */
+            self.state = .ready /* Start game */
+        }
     }
     
 //MARK: Update
@@ -32,8 +38,9 @@ class GameScene: SKScene {
     }
     
 //MARK: Touches
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        /* Called when a touch begins */
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) { /* Called when a touch begins */
+        if state == .gameOver || state == .title { return } /* Game not ready to play */
+        if state == .ready { state = .playing } /* Game begins on first touch */
         /* We only need a single touch here */
         let touch = touches.first!
         /* Get touch position in scene */
