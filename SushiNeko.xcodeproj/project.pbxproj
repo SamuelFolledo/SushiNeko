@@ -32,6 +32,8 @@
 		3310FBD1237A6DB300B8BBF8 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310FBD0237A6DB300B8BBF8 /* Character.swift */; };
 		3310FBD4237A7E8B00B8BBF8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310FBD3237A7E8B00B8BBF8 /* Constants.swift */; };
 		3310FBD6237A863E00B8BBF8 /* AnimationActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3310FBD5237A863E00B8BBF8 /* AnimationActions.sks */; };
+		3310FBD8237BDEE900B8BBF8 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310FBD7237BDEE900B8BBF8 /* GameState.swift */; };
+		3310FBDA237BDF0A00B8BBF8 /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310FBD9237BDF0A00B8BBF8 /* Side.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		3310FBD0237A6DB300B8BBF8 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		3310FBD3237A7E8B00B8BBF8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3310FBD5237A863E00B8BBF8 /* AnimationActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AnimationActions.sks; sourceTree = "<group>"; };
+		3310FBD7237BDEE900B8BBF8 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		3310FBD9237BDF0A00B8BBF8 /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,8 @@
 			children = (
 				3310FBCA237A214700B8BBF8 /* SushiPiece.swift */,
 				3310FBD0237A6DB300B8BBF8 /* Character.swift */,
+				3310FBD9237BDF0A00B8BBF8 /* Side.swift */,
+				3310FBD7237BDEE900B8BBF8 /* GameState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,9 +274,11 @@
 			files = (
 				3310FB9B237A17B300B8BBF8 /* GameScene.swift in Sources */,
 				3310FB9D237A17B300B8BBF8 /* GameViewController.swift in Sources */,
+				3310FBDA237BDF0A00B8BBF8 /* Side.swift in Sources */,
 				3310FB95237A17B300B8BBF8 /* AppDelegate.swift in Sources */,
 				3310FBD1237A6DB300B8BBF8 /* Character.swift in Sources */,
 				3310FBD4237A7E8B00B8BBF8 /* Constants.swift in Sources */,
+				3310FBD8237BDEE900B8BBF8 /* GameState.swift in Sources */,
 				3310FBCB237A214700B8BBF8 /* SushiPiece.swift in Sources */,
 				3310FBC9237A1B1E00B8BBF8 /* MSButtonNode.swift in Sources */,
 			);
