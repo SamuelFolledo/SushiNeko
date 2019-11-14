@@ -17,6 +17,15 @@ class GameScene: SKScene {
     var character: Character!
     var state: GameState = .title /* Game management */
     var playButton: MSButtonNode!
+    var healthBar: SKSpriteNode!
+    var health: CGFloat = 1.0 {
+      didSet {
+            /* Scale health bar between 0.0 -> 1.0 e.g 0 -> 100% */
+            /* Cap Health */
+            if health > 1.0 { health = 1.0 }
+            healthBar.xScale = health
+      }
+    }
     
 //MARK: App LifeCycle
     override func didMove(to view: SKView) {
@@ -30,10 +39,19 @@ class GameScene: SKScene {
         playButton.selectedHandler = { /* Setup play button selection handler */
             self.state = .ready /* Start game */
         }
+        healthBar = childNode(withName: kHEALTHBAR) as! SKSpriteNode
     }
     
 //MARK: Update
     override func update(_ currentTime: TimeInterval) {
+        /* Called before each frame is rendered */
+        if state != .playing { return }
+        /* Decrease Health */
+        health -= 0.01
+        /* Has the player ran out of health? */
+        if health < 0 {
+            gameOver()
+        }
         moveTowerDown()
     }
     
@@ -61,6 +79,7 @@ class GameScene: SKScene {
             firstPiece.flip(character.side)
             addRandomPieces(total: 1) /* Add a new sushi piece to the top of the sushi tower */
         }
+        health += 0.1
     }
     
 //MARK: Helper Methods
