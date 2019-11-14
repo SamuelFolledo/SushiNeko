@@ -35,6 +35,7 @@ class GameScene: SKScene {
     var highScoreLabel: SKLabelNode!
     var gameTitleLabel: SKLabelNode!
     var tapToPlayLabel: SKLabelNode!
+    var gameMat: SKSpriteNode!
     
     
 //MARK: App LifeCycle
@@ -90,6 +91,7 @@ class GameScene: SKScene {
     
 //MARK: Helper Methods
     func setupGameViews() {
+        gameMat = childNode(withName: kGAMEMAT) as? SKSpriteNode
         sushiBasePiece = childNode(withName: kBASESUSHI) as? SushiPiece //connect game object from .sks
         sushiBasePiece.connectChopsticks()
         character = childNode(withName: kCHARACTER) as? Character
@@ -99,8 +101,8 @@ class GameScene: SKScene {
         }
         scoreLabel = childNode(withName: kSCORELABEL) as? SKLabelNode
         healthBar = childNode(withName: kHEALTHBAR) as? SKSpriteNode
-        highScoreLabel = childNode(withName: kHIGHSCORELABEL) as? SKLabelNode
-        gameTitleLabel = childNode(withName: kGAMETITLELABEL) as? SKLabelNode
+        highScoreLabel = gameMat.childNode(withName: kHIGHSCORELABEL) as? SKLabelNode
+        gameTitleLabel = gameMat.childNode(withName: kGAMETITLELABEL) as? SKLabelNode
         tapToPlayLabel = childNode(withName: kTAPTOPLAYLABEL) as? SKLabelNode
         updateMenuLabels()
     }
@@ -128,11 +130,14 @@ class GameScene: SKScene {
     
     func updateMenuLabels() {
         if self.state == .title || self.state == .gameOver { //if game over, show labels
-           gameTitleLabel.isHidden = false
-           tapToPlayLabel.isHidden = false
-           highScoreLabel.isHidden = false
-            
+            gameTitleLabel.isHidden = false
+            tapToPlayLabel.isHidden = false
+            highScoreLabel.isHidden = false
+            let showMatAction = SKAction.moveTo(y: 283, duration: 1.5)
+            gameMat.run(showMatAction)
         } else {
+            let removeMatAction = SKAction.moveTo(y: 750, duration: 0.5)
+            gameMat.run(removeMatAction)
             gameTitleLabel.isHidden = true
             tapToPlayLabel.isHidden = true
             highScoreLabel.isHidden = true
