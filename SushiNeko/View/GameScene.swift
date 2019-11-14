@@ -11,7 +11,7 @@ import GameplayKit
 
 class GameScene: SKScene {
 //MARK: Properties
-    let punch = SKAction(named: "punch")!
+    let punch = SKAction(named: kPUNCH)!
     var sushiTower: [SushiPiece] = []
     var sushiBasePiece: SushiPiece!
     var character: Character!
@@ -63,6 +63,7 @@ class GameScene: SKScene {
         if state == .gameOver || state == .title { return } /* Game not ready to play */
         if state == .ready { state = .playing } /* Game begins on first touch */
         /* We only need a single touch here */
+        updateMenuLabels()
         let touch = touches.first!
         /* Get touch position in scene */
         let location = touch.location(in: self)
@@ -96,10 +97,12 @@ class GameScene: SKScene {
         playButton.selectedHandler = { /* Setup play button selection handler */
             self.state = .ready /* Start game */
         }
+        scoreLabel = childNode(withName: kSCORELABEL) as? SKLabelNode
         healthBar = childNode(withName: kHEALTHBAR) as? SKSpriteNode
         highScoreLabel = childNode(withName: kHIGHSCORELABEL) as? SKLabelNode
         gameTitleLabel = childNode(withName: kGAMETITLELABEL) as? SKLabelNode
         tapToPlayLabel = childNode(withName: kTAPTOPLAYLABEL) as? SKLabelNode
+        updateMenuLabels()
     }
     
     func gameOver() {
@@ -119,6 +122,20 @@ class GameScene: SKScene {
             }
             scene.scaleMode = .aspectFill /* Ensure correct aspect mode */
             skView?.presentScene(scene) /* Restart GameScene */
+        }
+        updateMenuLabels()
+    }
+    
+    func updateMenuLabels() {
+        if self.state == .title || self.state == .gameOver { //if game over, show labels
+           gameTitleLabel.isHidden = false
+           tapToPlayLabel.isHidden = false
+           highScoreLabel.isHidden = false
+            
+        } else {
+            gameTitleLabel.isHidden = true
+            tapToPlayLabel.isHidden = true
+            highScoreLabel.isHidden = true
         }
     }
     

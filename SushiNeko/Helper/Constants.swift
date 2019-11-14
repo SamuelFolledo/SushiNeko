@@ -6,6 +6,7 @@
 //  Copyright © 2019 SamuelFolledo. All rights reserved.
 //
 
+let kPUNCH: String = "punch"
 let kBACKGROUND: String = "background"
 let kBASESUSHI: String = "sushiBasePiece"
 let kLEFTCHOPSTICK: String = "leftChopstick"
@@ -18,3 +19,4 @@ let kSCORELABEL:String = "scoreLabel"
 let kGAMETITLELABEL: String = "gameTitleLabel"
 let kHIGHSCORELABEL: String = "highScoreLabel"
 let kTAPTOPLAYLABEL:String = "tapToPlayLabel"
+let kGAMEMAT: String = "gameMat"

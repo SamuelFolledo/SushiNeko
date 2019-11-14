@@ -35,7 +35,6 @@ class MSButtonNode: SKSpriteNode {
             case .MSButtonNodeStateHidden:
                 /* Disable touch */
                 self.isUserInteractionEnabled = false
-                
                 /* Hide */
                 self.alpha = 0
                 break
