@@ -32,6 +32,10 @@ class GameScene: SKScene {
         scoreLabel.text = String(score)
       }
     }
+    var highScoreLabel: SKLabelNode!
+    var gameTitleLabel: SKLabelNode!
+    var tapToPlayLabel: SKLabelNode!
+    
     
 //MARK: App LifeCycle
     override func didMove(to view: SKView) {
