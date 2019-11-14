@@ -26,6 +26,12 @@ class GameScene: SKScene {
             healthBar.xScale = health
       }
     }
+    var scoreLabel: SKLabelNode!
+    var score: Int = 0 {
+      didSet {
+        scoreLabel.text = String(score)
+      }
+    }
     
 //MARK: App LifeCycle
     override func didMove(to view: SKView) {
@@ -80,6 +86,8 @@ class GameScene: SKScene {
             addRandomPieces(total: 1) /* Add a new sushi piece to the top of the sushi tower */
         }
         health += 0.1
+        /* Increment Score */
+        score += 1
     }
     
 //MARK: Helper Methods
