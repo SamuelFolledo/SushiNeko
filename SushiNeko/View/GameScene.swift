@@ -40,16 +40,9 @@ class GameScene: SKScene {
 //MARK: App LifeCycle
     override func didMove(to view: SKView) {
         super.didMove(to: view)
-        sushiBasePiece = childNode(withName: kBASESUSHI) as? SushiPiece //connect game object from .sks
-        sushiBasePiece.connectChopsticks()
-        character = childNode(withName: kCHARACTER) as? Character
+        setupGameViews()
         addTowerPiece(side: .none)
         addRandomPieces(total: 10)
-        playButton = childNode(withName: kPLAYBUTTON) as? MSButtonNode
-        playButton.selectedHandler = { /* Setup play button selection handler */
-            self.state = .ready /* Start game */
-        }
-        healthBar = childNode(withName: kHEALTHBAR) as! SKSpriteNode
     }
     
 //MARK: Update
@@ -95,6 +88,20 @@ class GameScene: SKScene {
     }
     
 //MARK: Helper Methods
+    func setupGameViews() {
+        sushiBasePiece = childNode(withName: kBASESUSHI) as? SushiPiece //connect game object from .sks
+        sushiBasePiece.connectChopsticks()
+        character = childNode(withName: kCHARACTER) as? Character
+        playButton = childNode(withName: kPLAYBUTTON) as? MSButtonNode
+        playButton.selectedHandler = { /* Setup play button selection handler */
+            self.state = .ready /* Start game */
+        }
+        healthBar = childNode(withName: kHEALTHBAR) as? SKSpriteNode
+        highScoreLabel = childNode(withName: kHIGHSCORELABEL) as? SKLabelNode
+        gameTitleLabel = childNode(withName: kGAMETITLELABEL) as? SKLabelNode
+        tapToPlayLabel = childNode(withName: kTAPTOPLAYLABEL) as? SKLabelNode
+    }
+    
     func gameOver() {
         state = .gameOver
         /* Create turnRed SKAction */
