@@ -14,7 +14,7 @@ Sushi Neko - a clone of the popular mobile game Timberman. Used Apple's Swift pr
 - High score functionality
 
 ## Game Play 
-### Punch as much sushi as possible without sushi sticks hitting your character's head or health running
+### Punch as much sushi as possible before your health runs out or  getting hit on the head
 <img src="https://github.com/SamuelFolledo/SushiNeko/blob/master/screenshots/gamePlay.gif" width="465" height="828">
 
 ## Screenshots of Meteor Game
