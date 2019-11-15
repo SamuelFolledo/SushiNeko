@@ -105,6 +105,7 @@ class GameScene: SKScene {
         gameTitleLabel = gameMat.childNode(withName: kGAMETITLELABEL) as? SKLabelNode
         tapToPlayLabel = childNode(withName: kTAPTOPLAYLABEL) as? SKLabelNode
         updateMenuLabels()
+        highScoreLabel.text = "Highscore: \(UserDefaults.standard.integer(forKey: kHIGHSCORE))"
     }
     
     func gameOver() {
@@ -126,6 +127,16 @@ class GameScene: SKScene {
             skView?.presentScene(scene) /* Restart GameScene */
         }
         updateMenuLabels()
+        checkHighScore()
+    }
+    
+    func checkHighScore() {
+        let highScore = UserDefaults.standard.integer(forKey: kHIGHSCORE)
+        if self.score > highScore {
+            UserDefaults.standard.set(self.score, forKey: kHIGHSCORE)
+            UserDefaults.standard.synchronize() //set the high score
+            highScoreLabel.text = "Highscore: \(UserDefaults.standard.integer(forKey: kHIGHSCORE))" //put the highschore on text
+        }
     }
     
     func updateMenuLabels() {
