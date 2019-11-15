@@ -3,7 +3,7 @@ Sushi Neko - a clone of the popular mobile game Timberman. Used Apple's Swift pr
 
 
 ## Features
-- Timerman clone
+- Timberman clone
 - Avoid getting hit by the chopstick
 - Tap left side or right side of the screen
 - Keep track of score
